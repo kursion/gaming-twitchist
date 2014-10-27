@@ -5,4 +5,5 @@ install:
 	@echo "Done..."
 
 upload:
+	@sudo rm -rf build dist *.egg-info
 	python setup.py sdist upload

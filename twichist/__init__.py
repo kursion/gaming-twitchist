@@ -67,6 +67,7 @@ def main():
         channel = stream["channel"]
         viewers = stream["viewers"]
         name    = channel["display_name"][:12].replace(" ", "")
+        if channel["status"] == None: continue
         status  = channel["status"].replace("\n", "").replace("\r", "")[:50]
         print( "{0:2} {1:17} {2:23} {3:1} {4:50}".format(
             i,

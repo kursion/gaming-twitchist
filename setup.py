@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='Twichist',
-            version='0.2',
+            version='0.2.1',
             description='A little to that parse and show the streams on twitch. Open it with you favorite browser.',
             url='https://github.com/kursion/twichist',
             author='Yves Lange',
