@@ -5,7 +5,7 @@ of live stream for a specific game on twitch.
 Author: Yves Lange (Kursion)
 
 example:
-    $ twilist --game "Dota 2" --limit 50
+    $ twichist --game "Dota 2" --limit 50
 """
 
 from urllib import request

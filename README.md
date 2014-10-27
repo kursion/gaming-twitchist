@@ -2,15 +2,15 @@
 
 A little application that will list *Twitch.tv* streams for your favorite game.
 
-eg: `$ twilist`
+eg: `$ twichist`
 
 # Install
 
-`sudo pip install twilist`
+`sudo pip install twichist`
 
 OR
 
-You can download the script and use `python twilist.py`
+You can download the script and use `python twichist.py`
 
 OR
 
@@ -23,7 +23,7 @@ OR
 - `--browser` (default: 'chromium'): which browser to open.
 - `--help`: this option will make you win 10k gold on World of Warcraft !
 
-eg: `$ twilist --game 'World of warcraft' --limit 20 --browser firefox`
+eg: `$ twichist --game 'World of warcraft' --limit 20 --browser firefox`
 
 # Dependencies
 
