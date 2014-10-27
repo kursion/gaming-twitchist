@@ -7,8 +7,8 @@ pkgrel=1
 pkgdesc="A little to that parse and show the streams on twitch. Open it
 with you favorite browser."
 arch=()
-url=""
-license=('GPL')
+url="https://github.com/kursion/twilist"
+license=('MIT')
 groups=()
 depends=('python')
 makedepends=()
