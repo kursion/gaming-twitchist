@@ -86,7 +86,7 @@ def main():
             name    = channel["display_name"]
             status  = channel["status"]
             url     = URLS[choice]
-            print(colored("You are watching: %d" % choice, Style.DIM+Fore.YELLOW))
+            print(colored("You are watching: %d" % (choice+1), Style.DIM+Fore.YELLOW))
             print(colored("Name %s | %s" % (name, status), Style.BRIGHT+Fore.YELLOW))
             break
         except Exception:
