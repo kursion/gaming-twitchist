@@ -11,7 +11,8 @@ example:
 from urllib import request
 from subprocess import call
 from colorama import Fore, Back, Style
-import json, colorama, argparse
+import json, colorama, argparse, os
+_livestreamer_bin = "/usr/bin/livestreamer"
 
 def main():
     colorama.init()
@@ -24,6 +25,7 @@ def main():
                         help='name of the browser to open stream (default: chromium)', default='chromium')
     parser.add_argument('--limit', type=int,
                         help='limit of channel to show (default: 20)', default='20')
+    parser.add_argument("--quality", default="best", help="Quality (for livestreamer) [audio, high, low, medium, mobile (worst), source (best)]")
     args = parser.parse_args()
 
     # HELPERS
@@ -67,7 +69,7 @@ def main():
         channel = stream["channel"]
         viewers = stream["viewers"]
         name    = channel["display_name"][:12].replace(" ", "")
-        if channel["status"] == None: continue
+        if "status" not in channel: continue
         status  = channel["status"].replace("\n", "").replace("\r", "")[:50]
         print( "{0:2} {1:17} {2:23} {3:1} {4:50}".format(
             i,
@@ -96,7 +98,9 @@ def main():
             exit()
 
     # NOTE: for chrome with use the app parameter
-    if args.browser in ["chromium", "chrome", "google-chrome"]:
+    if os.path.isfile(_livestreamer_bin):
+        call(["livestreamer", "twitch.tv/"+name, args.quality])
+    elif args.browser in ["chromium", "chrome", "google-chrome"]:
         call([args.browser, "--app="+url])
     else:
         call([args.browser, url])
