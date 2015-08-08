@@ -5,7 +5,7 @@ of live stream for a specific game on twitch.
 Author: Yves Lange (Kursion)
 
 example:
-    $ twichist --game "Dota 2" --limit 50
+    $ twitchist --game "Dota 2" --limit 50
 """
 
 from urllib import request
@@ -105,5 +105,6 @@ def main():
     else:
         call([args.browser, url])
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()
 
